@@ -1,0 +1,26 @@
+/*Interface connexion*/
+
+#connexion {
+	width:100%;
+	
+	/*texte*/
+	text-align:center;
+	
+	/*espace*/
+}
+
+/*Boutons*/
+
+.connexion {
+	/*style*/
+	background-color:#3F9333;
+	border-color:#3F9333;
+	
+	/*texte*/
+	font-size:1em;
+	font-weight:bold;
+	color:white;
+	
+	margin-top:50px;
+}
+

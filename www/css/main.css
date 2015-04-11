@@ -1,0 +1,67 @@
+/* INTERFACE MAIN*/
+
+/* Menu */
+#menu {
+	/*format and space*/
+	height:60px;
+	width:100%;
+	background-color:blue;
+	
+	/*position*/
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:100;
+}
+
+.case {
+	height:60px;
+	width:25%;
+	position:absolute;
+	top:0px;
+	
+	text-align:center;
+	font-size:1.8em;
+	color:grey;
+	line-height:60px;
+}
+#un {
+	left:0px;
+	background-color:blue;
+}
+#deux {
+	left:25%;
+	background-color:red;
+}#trois {
+	left:50%;
+	background-color:green;
+}#quatre {
+	left:75%;
+	background-color:orange;
+}
+
+/*TRANSVERSAL*/
+
+.post {
+	/*space and format*/
+	overflow:hidden;
+	width:80%;
+	margin-left:7%;
+	margin-top:4%;
+	margin-bottom:3%;
+	padding-left:3%;
+	padding-right:3%;
+	padding-top:2%;
+	padding-bottom:2%;
+	
+	/*style*/
+	background-color:white;
+	
+	/*text*/
+	text-align:center;
+	font-size:0.9em;
+	
+	/*border*/
+	border: solid 1px #3F9333;
+	border-radius: 5px 5px;
+}

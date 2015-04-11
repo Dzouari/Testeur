@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/connexion.css" />
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+        <link rel="stylesheet" type="text/css" href="css/inscription.css" />
+		<link rel="stylesheet" type="text/css" href="css/poster.css" />
+		<link rel="stylesheet" type="text/css" href="css/news.css" />
+		
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/functions.js"></script>
+        <title>WHISP</title>
+    </head>
+    <body>
+		<div id="app">
+		
+			<!-- Menu horinzontal en haut-->
+			<div id="menu">
+				<a href="index.html">
+				<div id="un" class="case">
+				News
+				</div>
+				</a>
+				<div id="deux" class="case" label="news">
+				Top
+				</div>
+				<div id="trois" class="case" label="news">
+				Mine
+				</div>
+				<div id="quatre" class="case"  label="poster">
+				Post
+				</div>
+			</div>
+			<!-- Fin du menu horizontal-->
+			<div id="conteneur" style="min-height:10px;width:100%;background-color:yellow;position:absolute;top:80px;left:0px;">
+				<div style="position:aboslute;top:0xp;left:0px;width:100%;text-align:center;">BIM</div>
+			</div>
+			
+			<div id="content" style="display:none;">
+			<div id="poster">
+				<textarea id="popost" maxlength="160"></textarea>
+				<button class="bouton connexion">Poster</button>
+			</div>
+			<div id="news" >
+				<div class="post">
+					BIM BIM BIM BIM BIM
+					BIM BIM BIM BIM BIM
+					BIM BIM BIM BIM BIM
+					BIM BIM BIM BIM BIM
+					BIM BIM BIM BIM BIM
+					BIM BIM BIM BIM BIM
+					BIM BIM BIM BIM BIM
+				</div>
+				<div class="post">
+					Post 2
+				</div>
+				<div class="post">
+					Post 3
+				</div>
+				<div class="post">
+					Post 4
+				</div>
+				<div class="post">
+					Post 5
+				</div>
+			</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+		</script>
+    </body>
+</html>
