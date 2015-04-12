@@ -27,7 +27,7 @@
 					
 					if(pseudo != "none") {
 						$.post(url,{pseudo:pseudo,mail:mail,confmail:confmail,mdp:mdp,confmdp:confmdp},function(data){
-							alert(data);
+							alert(data.rapport);
 						},"json");
 						return false;
 					}
