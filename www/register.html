@@ -14,6 +14,29 @@
 		
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/functions.js"></script>
+		
+		<script>
+			$(function(){
+				$("#bouton_go").click(function(){
+					pseudo = $("#input_pseudo").val();
+					mail = $("#input_mail").val();
+					confmail = $("#input_mail_confirmation").val();
+					mdp = $("#input_mdp").val();
+					confmdp = $("#input_mdp_confirmation").val();
+					url = "http://www.goudesset.fr/johary/inscription.php";
+					
+					if(pseudo != "none") {
+						$.post(url,{pseudo:pseudo,mail:mail,confmail:confmail,mdp:mdp,confmdp:confmdp},function(data){
+							alert(data);
+						},"json");
+						return false;
+					}
+					else {
+						alert("Pseudo non valide");
+					}
+				});
+			});
+		</script>
         <title>WHISP</title>
     </head>
     <body>
@@ -26,8 +49,12 @@
 					<input type="text" id="input_pseudo"> <br/>
 				</div>
 				<div class="divinput">
-					<label class="label" for="input_mail">Adresse mail EDHEC</label> <br/>
+					<label class="label" for="input_mail">Adresse mail</label> <br/>
 					<input type="text" id="input_mail"><br/>
+				</div>
+				<div class="divinput">
+					<label class="label" for="input_mail_confirmation">Confirmation de l'adresse mail</label> <br/>
+					<input type="text" id="input_mail_confirmation"><br/>
 				</div>
 				<div class="divinput">
 					<label class="label" for="input_mdp">Mot de passe</label> <br/>
@@ -37,8 +64,7 @@
 					<label class="label" for="input_mdp_confirmation">Confirmation du mot de passe</label> <br/>
 					<input type="password" id="input_mdp_confirmation" /> <br/>
 				</div>
-			
-				<a href="main.html#news"><button class="bouton connexion">GO</button></a>
+				<button class="bouton connexion" id="bouton_go">GO</button>
 			</div>
 		</div>
         <script type="text/javascript" src="cordova.js"></script>
