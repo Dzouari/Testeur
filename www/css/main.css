@@ -5,7 +5,6 @@
 	/*format and space*/
 	height:60px;
 	width:100%;
-	background-color:blue;
 	
 	/*position*/
 	position:absolute;
@@ -27,17 +26,26 @@
 }
 #un {
 	left:0px;
-	background-color:blue;
+	z-index:1000;
 }
 #deux {
 	left:25%;
-	background-color:red;
+	z-index:1000;
 }#trois {
 	left:50%;
-	background-color:green;
+	z-index:1000;
 }#quatre {
 	left:75%;
-	background-color:orange;
+	z-index:1000;
+}
+
+#selecteur {
+	position:absolute;
+	top:0;
+	height:60px;
+	z-index:500;
+	background-color:#3f9333;
+	width:25%;
 }
 
 /*TRANSVERSAL*/

@@ -15,6 +15,31 @@
 
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/functions.js"></script>
+		
+		<script>
+		$(document).ready(function() {
+			$('#bouton_connexion').click(function(){
+				var pseudo = $('#input_pseudo').val();
+				var mdp = $('#input_mdp').val();
+				var url = "http://www.goudesset.fr/johary/connexion.php";
+				
+				
+				if (mdp != '' && pseudo != '') {
+					$.post(url,{pseudo:pseudo,mdp:mdp},function(data){
+						if( data.etat = "OK" ) {
+							document.location.href="main.html";
+						}
+						else {
+							alert(data.rapport);
+						}
+					},"json");
+				}
+				else {
+					alert('Il faut remplir tous les champs !');
+				}
+			})
+		})
+		</script>
         <title>WHISP</title>
     </head>
     <body>
@@ -30,7 +55,7 @@
 					<input type="password" id="input_mdp" /> <br/>
 				</div>
 			</div>
-			<a href="main.html"><button class="bouton connexion">Connexion</button></a>
+			<button id="bouton_connexion" class="bouton connexion">Connexion</button>
 			<div class="divlien"><a class="lien" href="register.html">S'inscrire</a></div>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
