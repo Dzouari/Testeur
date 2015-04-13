@@ -26,7 +26,7 @@
 				
 				if (mdp != '' && pseudo != '') {
 					$.post(url,{pseudo:pseudo,mdp:mdp},function(data){
-						if( data.etat = "OK" ) {
+						if( data.etat == "OK" ) {
 							document.location.href="main.html";
 						}
 						else {
