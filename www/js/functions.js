@@ -7,11 +7,12 @@ $(document).ready(function() {
 		/*Envoi*/
 		$.post(url,{type:type,id:id}, function(data) {
 			if(data.etat == "OK") {
-				var number = data.nombre;
-				/*for (var i = 1; i < nombre; iter++) {
+				var number = parseInt(data.nombre);
+				/*On affiche les whisps*/
+				for (var i = 1; i < number; i++) {
 					$selecteur.append(data.whisp.i);
-				}*/
-				alert(number);
+				}
+				alert(data.rapport);
 			}
 			else {
 				alert(data.rapport);
