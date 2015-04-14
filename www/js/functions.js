@@ -7,11 +7,11 @@ $(document).ready(function() {
 		/*Envoi*/
 		$.post(url,{type:type,id:id}, function(data) {
 			if(data.etat = "OK") {
-				var nombre = data.nombre;
-				for (var i = 1; i < nombre; iter++) {
+				var number = data.nombre;
+				/*for (var i = 1; i < nombre; iter++) {
 					$selecteur.append(data.whisp.i);
-				}
-				alert("C'est bon");
+				}*/
+				alert(number);
 			}
 			else {
 				alert(data.rapport);
