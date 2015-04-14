@@ -4,9 +4,9 @@ $(document).ready(function() {
 	function whisp(type,id,$selecteur) {
 		url="http://www.goudesset.fr/johary/whisp.php";
 		/*Envoi*/
-		alert(id);
 		$.post(url,{type:type,id:id}, function(data) {
 			if(data.etat == "OK") {
+				alert(id);
 				var number = parseInt(data.nombre);
 				/*On affiche les whisps*/
 				for (var i = 1; i <= number; i++) {
