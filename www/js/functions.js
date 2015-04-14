@@ -12,7 +12,7 @@ $(document).ready(function() {
 				for (var i = 1; i <= number; i++) {
 					/*var nom = "whisp_" + i;*/
 					/*$selecteur.append(data.whisp.i);*/
-					contenu = data.whisp.i;
+					contenu = data.whisp[i];
 					alert(contenu);
 				}
 				alert(data.rapport);
