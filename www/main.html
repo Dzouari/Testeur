@@ -27,7 +27,6 @@
 				/*sauvegarder l'id de l'utilisateur dans une div non affichée*/
 				$('#idid').append(id);
 				
-				/*envoyer un whisp*/
 				$('#bouton_poster').click(function(){
 					var message = $('#popost').val();
 					var idauteur = $('#idid').text();
@@ -37,6 +36,7 @@
 					if( message != '') {
 						if( idauteur != '' ) {
 							$('#chargement').show(1000);
+							
 							
 							/*envoi*/
 							$.post(url,{idauteur:idauteur,message:message},function(data){
