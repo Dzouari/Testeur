@@ -38,8 +38,7 @@
 					if( message != '') {
 						if( idauteur != '' ) {
 							$('#chargement').show(1000);
-							
-							
+							$("#popost").val() = "";
 							/*envoi*/
 							$.post(url,{idauteur:idauteur,message:message},function(data){
 								if( data.etat == "OK" ) {
