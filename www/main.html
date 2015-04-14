@@ -64,19 +64,16 @@
 							
 							/*envoi*/
 							$.post(url,{idauteur:idauteur,message:message},function(data){
-								/*if( data.etat == "OK" ) {
+								if( data.etat == "OK" ) {
 									alert("Message envoyé !");
 									$('#chargement').hide(200);
 								}
 								else {
 									alert(data.rapport);
 									$('#chargement').hide(200);
-								}*/
-								alert(data.rapport);
+								}
 							},"json");
 							
-							
-							alert(idauteur);
 							$('#chargement').hide(200);
 						}
 						else {
