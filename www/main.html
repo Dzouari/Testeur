@@ -60,6 +60,8 @@
 					if( message != '') {
 						if( idauteur != '' ) {
 							$('#chargement').show(1000);
+							
+							
 							/*envoi
 							$.post(url,{idauteur:idauteur,message:message},function(data){
 								if( data.etat == "OK" ) {
@@ -71,7 +73,9 @@
 									$('#chargement').hide(200);
 								}
 							},"json");*/
-							alert(message);
+							
+							
+							alert(idauteur);
 							$('#chargement').hide(200);
 						}
 						else {
