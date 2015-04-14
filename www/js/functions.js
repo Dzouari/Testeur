@@ -4,6 +4,7 @@ $(document).ready(function() {
 	function whisp(type,id,$selecteur) {
 		url="http://www.goudesset.fr/johary/whisp.php";
 		/*Envoi*/
+		alert(id);
 		$.post(url,{type:type,id:id}, function(data) {
 			if(data.etat == "OK") {
 				var number = parseInt(data.nombre);
