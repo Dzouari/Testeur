@@ -3,7 +3,6 @@ $(document).ready(function() {
 	/*affichage whisps*/
 	function whisp(type,id,$selecteur) {
 		url="http://www.goudesset.fr/johary/whisp.php";
-		
 		/*Envoi*/
 		$.post(url,{type:type,id:id}, function(data) {
 			if(data.etat == "OK") {
@@ -48,7 +47,7 @@ $(document).ready(function() {
 			$('#quatre').css('color', '#808080');
 		})
 		
-		whisp("news",13,$("#news"));
+		whisp("news",0,$("#news"));
 	})
 	
 	
@@ -78,6 +77,8 @@ $(document).ready(function() {
 			$('#trois').css('color', '#808080');
 			$('#quatre').css('color', '#808080');
 		})
+		
+		whisp("top",0,$("#top"));
 	})
 	
 	
@@ -107,6 +108,8 @@ $(document).ready(function() {
 			$('#trois').css('color', '#ffffff');
 			$('#quatre').css('color', '#808080');
 		})
+		
+		whisp("mine",$("#idid").text(),$("#mine"));
 	})
 	
 	

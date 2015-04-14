@@ -27,6 +27,7 @@
 				/*sauvegarder l'id de l'utilisateur dans une div non affichée*/
 				$('#idid').append(id);
 				
+				/*envoyer un whisp*/
 				$('#bouton_poster').click(function(){
 					var message = $('#popost').val();
 					var idauteur = $('#idid').text();
@@ -36,7 +37,6 @@
 					if( message != '') {
 						if( idauteur != '' ) {
 							$('#chargement').show(1000);
-							
 							
 							/*envoi*/
 							$.post(url,{idauteur:idauteur,message:message},function(data){
@@ -89,35 +89,17 @@
 			</div>
 			<div id="news" style="left:0px;" >
 				<div class="post">
-					BIM BIM BIM BIM BIM
-					BIM BIM BIM BIM BIM
-					BIM BIM BIM BIM BIM
-					BIM BIM BIM BIM BIM
-					BIM BIM BIM BIM BIM
-					BIM BIM BIM BIM BIM
-					BIM BIM BIM BIM BIM
+					NEWS
 				</div>
 			</div>
 			<div id="top" style="left:2000px;" >
 				<div class="post">
-					TOP TOP TOP TOP TOP
-					TOP TOP TOP TOP TOP
-					TOP TOP TOP TOP TOP
-					TOP TOP TOP TOP TOP
-					TOP TOP TOP TOP TOP
-					TOP TOP TOP TOP TOP
-					TOP TOP TOP TOP TOP
+					TOP
 				</div>
 			</div>
 			<div id="mine" style="left:2000px;" >
 				<div class="post">
-					BOUM BOUM BOUM BOUM BOUM
-					BOUM BOUM BOUM BOUM BOUM
-					BOUM BOUM BOUM BOUM BOUM
-					BOUM BOUM BOUM BOUM BOUM
-					BOUM BOUM BOUM BOUM BOUM
-					BOUM BOUM BOUM BOUM BOUM
-					BOUM BOUM BOUM BOUM BOUM
+					MINE
 				</div>
 			</div>
 			<div id="poster" style="left:2000px;">
