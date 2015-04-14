@@ -27,7 +27,7 @@
 				if (mdp != '' && pseudo != '') {
 					$.post(url,{pseudo:pseudo,mdp:mdp},function(data){
 						if( data.etat == "OK" ) {
-							alert(data.rapport);
+							alert(data.id);
 							$('#chargement').hide(700);
 							var id = data.id;
 							setTimeout(function() {

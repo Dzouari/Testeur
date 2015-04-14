@@ -19,18 +19,11 @@
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/functions.js"></script>
 		<script>
-			$(document).ready(function() {
-				
-			})
-		</script>
-		<script>
 			/*sauvegarder l'id de l'utilisateur dans une div non affichée*/
 			var id = location.search;
 			id = id.replace("?id=","");
 			
 			$(document).ready(function() {
-				$("#news").empty();
-				whisp("news",0,$("#news"));
 				alert(id);
 				/*sauvegarder l'id de l'utilisateur dans une div non affichée
 				$('#idid').append(id);
