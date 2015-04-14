@@ -8,10 +8,10 @@ $(document).ready(function() {
 		$.post(url,{type:type,id:id}, function(data) {
 			if(data.etat == "OK") {
 				var number = parseInt(data.nombre);
-				/*On affiche les whisps*/
+				/*On affiche les whisps
 				for (var i = 1; i < number; i++) {
 					$selecteur.append(data.whisp.i);
-				}
+				}*/
 				alert(data.rapport);
 			}
 			else {
