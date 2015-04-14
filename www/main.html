@@ -25,23 +25,23 @@
 			
 			$(document).ready(function() {
 				alert(id);
-				/*sauvegarder l'id de l'utilisateur dans une div non affichée
+				/*sauvegarder l'id de l'utilisateur dans une div non affichée*/
 				$('#idid').append(id);
 				$('#bouton_poster').click(function(){
 					var message = $('#popost').val();
 					var idauteur = $('#idid').text();
-					var url = "http://www.goudesset.fr/johary/poster.php";*/
+					var url = "http://www.goudesset.fr/johary/poster.php";
 					
-					/*check des champs
+					/*check des champs*/
 					if( message != '') {
 						if( idauteur != '' ) {
 							$('#chargement').show(1000);
-							alert(idauteur);*/
-							/*envoi
+							alert(idauteur);
+							/*envoi*/
 							$.post(url,{idauteur:idauteur,message:message},function(data){
 								if( data.etat == "OK" ) {
-									alert("Message envoyé !");*/
-									/*vidage
+									alert("Message envoyé !");
+									/*vidage*/
 									var message = $('#popost').val() = "";
 									$('#chargement').hide(200);
 								}
@@ -60,7 +60,7 @@
 					else {
 						alert('Message vide !');
 					}
-				})*/
+				})
 			})
 			
 		</script>
