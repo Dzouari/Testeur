@@ -1,5 +1,24 @@
 $(document).ready(function() {
 	
+	/*affichage whisps*/
+	function whisp(type,id,$selecteur) {
+		url="http://www.goudesset.fr/johary/whisp.php";
+		
+		/*Envoi*/
+		$.post(url,{type:type,id:id}, function(data) {
+			if(data.etat = "OK") {
+				var nombre = data.nombre;
+				for (var i = 1; i < nombre; iter++) {
+					$selecteur.append(data.whisp.i);
+				}
+				alert("C'est bon");
+			}
+			else {
+				alert(data.rapport);
+			}
+		});
+	}
+	
 	/*Si on clique sur un*/
 	$('#un').click(function() {
 		$('#poster').animate({
@@ -26,6 +45,8 @@ $(document).ready(function() {
 			$('#trois').css('color', '#808080');
 			$('#quatre').css('color', '#808080');
 		})
+		
+		whisp("news",13,$("#news"));
 	})
 	
 	
