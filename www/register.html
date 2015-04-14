@@ -26,12 +26,18 @@
 					url = "http://www.goudesset.fr/johary/inscription.php";
 					
 					$('#chargement').show(1000);
-					if(pseudo != "none") {
-						$.post(url,{pseudo:pseudo,mail:mail,confmail:confmail,mdp:mdp,confmdp:confmdp},function(data){
-							alert(data.rapport);
+					if( (pseudo != "none") && (mdp != "none") && (pseudo != "") && (mdp != "")) {
+						if($('#cgu').is(':checked')) {
+							$.post(url,{pseudo:pseudo,mail:mail,confmail:confmail,mdp:mdp,confmdp:confmdp},function(data){
+								alert(data.rapport);
+								$('#chargement').hide(200);
+							},"json");
+							return false;
+						}
+						else {
+							alert("Vous devez accepter les conditions d'utilisation");
 							$('#chargement').hide(200);
-						},"json");
-						return false;
+						}
 					}
 					else {
 						alert("Pseudo non valide");

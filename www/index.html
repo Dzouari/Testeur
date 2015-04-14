@@ -31,7 +31,7 @@
 					$.post(url,{pseudo:pseudo,mdp:mdp},function(data){
 						if( data.etat == "OK" ) {
 							alert(data.rapport);
-							$('#chargement').hide(1000);
+							$('#chargement').hide(700);
 							var id = data.id;
 							setTimeout(function() {
 							  window.location.href = "main.html?id=" + id;

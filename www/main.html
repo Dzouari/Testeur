@@ -23,21 +23,71 @@
 			var id = location.search;
 			id = id.replace("?id=","");
 			$(document).ready(function() {
+			
 				/*sauvegarder l'id de l'utilisateur dans une div non affichée*/
 				$('#idid').append(id);
 				
-				/*Click pour poster un message*/
-				$('#bouton_poster').click({
+				
+				/*Click pour poster un message
+				$('#bouton_poster').click(function(){
 					var message = $('#popost').val();
 					var idauteur = $('#idid').text();
-					alert(idauteur);
+					var url = "http://www.goudesset.fr/johary/poster.php";
+					
+					$('#chargement').show(1000);
+					alert(message);
+					$('#chargement').hide(200);
+					
+					if( message != '') {
+						if( idauteur != '' ) {
+							
+						}
+						else {
+							alert("Problème d'authentification");
+						}
+					}
+					else {
+						alert('Message vide !');
+					}
+				})*/
+				
+				$('#bouton_poster').click(function(){
+					var message = $('#popost').val();
+					var idauteur = $('#idid').text();
+					var url = "http://www.goudesset.fr/johary/poster.php";
+					
+					$('#chargement').show(1000);
+					
+					/*check des champs*/
+					if( message != '') {
+						if( idauteur != '' ) {
+							/*envoi*/
+							$.post(url,{idauteur:idauteur,message:message},function(data){
+								if( data.etat == "OK" ) {
+									alert("Message envoyé !");
+									$('#chargement').hide(200);
+								}
+								else {
+									alert(data.rapport);
+									$('#chargement').hide(200);
+								}
+							},"json");
+						}
+						else {
+							alert("Problème d'authentification");
+						}
+					}
+					else {
+						alert('Message vide !');
+					}
 				})
-			});
+			})
 		</script>
         <title>WHISP</title>
     </head>
     <body>
 	<div id="idid" style="display:none;"></div>
+	<div id="chargement" style="display:none;"> <span class="loader loader-quart"></span></div>
 		<div id="app">
 		
 			<!-- Menu horinzontal en haut-->
@@ -127,7 +177,7 @@
 			</div>
 			<div id="poster" style="left:2000px;">
 				<textarea id="popost" maxlength="160"></textarea>
-				<a href="index.html"><button id="bouton_poster"class="bouton connexion">Poster</button></a>
+				<button id="bouton_poster"class="bouton connexion">Poster</button>
 			</div>
 		</div>
 		<script type="text/javascript" src="cordova.js"></script>
