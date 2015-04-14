@@ -8,9 +8,9 @@ $(document).ready(function() {
 		$.post(url,{type:type,id:id}, function(data) {
 			if(data.etat == "OK") {
 				var number = data.nombre;
-				for (var i = 1; i < nombre; iter++) {
+				/*for (var i = 1; i < nombre; iter++) {
 					$selecteur.append(data.whisp.i);
-				}
+				}*/
 				alert(number);
 			}
 			else {
