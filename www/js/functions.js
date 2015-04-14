@@ -3,7 +3,6 @@ $(document).ready(function() {
 	/*affichage whisps*/
 	function whisp(type,id,$selecteur) {
 		url="http://www.goudesset.fr/johary/whisp.php";
-		$selecteur.empty();
 		/*Envoi*/
 		$.post(url,{type:type,id:id}, function(data) {
 			if(data.etat == "OK") {

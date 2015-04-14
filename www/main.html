@@ -30,46 +30,45 @@
 			id = id.replace("?id=","");
 			
 			$(document).ready(function() {
-					/*sauvegarder l'id de l'utilisateur dans une div non affichée*/
-					$('#idid').append(id);
-					alert(id);
-					$('#bouton_poster').click(function(){
-						var message = $('#popost').val();
-						var idauteur = $('#idid').text();
-						var url = "http://www.goudesset.fr/johary/poster.php";
-						
-						/*check des champs*/
-						alert(message);
-						alert(idauteur);
-						if( message != '') {
-							if( idauteur != '' ) {
-								$('#chargement').show(1000);
-								alert(idauteur);
-								/*envoi*/
-								$.post(url,{idauteur:idauteur,message:message},function(data){
-									if( data.etat == "OK" ) {
-										alert("Message envoyé !");
-										/*vidage*/
-										var message = $('#popost').val() = "";
-										$('#chargement').hide(200);
-									}
-									else {
-										alert(data.rapport);
-										$('#chargement').hide(200);
-									}
-								},"json");
-								
-								$('#chargement').hide(200);
-							}
-							else {
-								alert("Problème d'authentification");
-							}
+				alert(id);
+				/*sauvegarder l'id de l'utilisateur dans une div non affichée
+				$('#idid').append(id);
+				$('#bouton_poster').click(function(){
+					var message = $('#popost').val();
+					var idauteur = $('#idid').text();
+					var url = "http://www.goudesset.fr/johary/poster.php";*/
+					
+					/*check des champs
+					if( message != '') {
+						if( idauteur != '' ) {
+							$('#chargement').show(1000);
+							alert(idauteur);*/
+							/*envoi
+							$.post(url,{idauteur:idauteur,message:message},function(data){
+								if( data.etat == "OK" ) {
+									alert("Message envoyé !");*/
+									/*vidage
+									var message = $('#popost').val() = "";
+									$('#chargement').hide(200);
+								}
+								else {
+									alert(data.rapport);
+									$('#chargement').hide(200);
+								}
+							},"json");
+							
+							$('#chargement').hide(200);
 						}
 						else {
-							alert('Message vide !');
+							alert("Problème d'authentification");
 						}
-					})
+					}
+					else {
+						alert('Message vide !');
+					}
+				})*/
 			})
+			
 		</script>
         <title>WHISP</title>
     </head>
