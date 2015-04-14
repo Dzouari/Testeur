@@ -62,17 +62,18 @@
 							$('#chargement').show(1000);
 							
 							
-							/*envoi
+							/*envoi*/
 							$.post(url,{idauteur:idauteur,message:message},function(data){
-								if( data.etat == "OK" ) {
+								/*if( data.etat == "OK" ) {
 									alert("Message envoyé !");
 									$('#chargement').hide(200);
 								}
 								else {
 									alert(data.rapport);
 									$('#chargement').hide(200);
-								}
-							},"json");*/
+								}*/
+								alert(data.rapport);
+							},"json");
 							
 							
 							alert(idauteur);
