@@ -1,11 +1,5 @@
 $(document).ready(function() {
 	
-	
-	/*Si on double-clique sur un post*/
-	$('.post').dblclick(function() {
-		
-	})
-	
 	/*affichage whisps*/
 	function whisp(type,id,$selecteur) {
 		url="http://www.goudesset.fr/johary/whisp.php";
