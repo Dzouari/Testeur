@@ -6,6 +6,7 @@ $(document).ready(function() {
 		/*Envoi*/
 		$.post(url,{type:type,id:id}, function(data) {
 			if(data.etat == "OK") {
+				$selecteur.empty();
 				var number = parseInt(data.nombre);
 				/*On affiche les whisps*/
 				for (var i = 1; i <= number; i++) {
