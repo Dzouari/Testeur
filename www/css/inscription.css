@@ -1,1 +1,11 @@
-/* INSCRIPTION */
+/*Interface inscription*/
+
+#inscription {
+	width:100%;
+	margin-top:5%;
+	
+	/*texte*/
+	text-align:center;
+	
+	/*espace*/
+}

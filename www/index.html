@@ -6,7 +6,7 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <link rel="stylesheet" type="text/css" href="css/connexion.css" />
         <link rel="stylesheet" type="text/css" href="css/inscription.css" />
@@ -18,24 +18,34 @@
 		
 		<script>
 		$(document).ready(function() {
+			
+		
 			$('#bouton_connexion').click(function(){
+				
 				var pseudo = $('#input_pseudo').val();
 				var mdp = $('#input_mdp').val();
 				var url = "http://www.goudesset.fr/johary/connexion.php";
 				
-				
+				$('#chargement').show(1000);
 				if (mdp != '' && pseudo != '') {
 					$.post(url,{pseudo:pseudo,mdp:mdp},function(data){
 						if( data.etat == "OK" ) {
-							document.location.href="main.html";
+							alert(data.rapport);
+							$('#chargement').hide(1000);
+							var id = data.id;
+							setTimeout(function() {
+							  window.location.href = "main.html?id=" + id;
+							},500);
 						}
 						else {
 							alert(data.rapport);
+							$('#chargement').hide(1000);
 						}
 					},"json");
 				}
 				else {
 					alert('Il faut remplir tous les champs !');
+					$('#chargement').hide(1000);
 				}
 			})
 		})
@@ -43,8 +53,10 @@
         <title>WHISP</title>
     </head>
     <body>
+	
         <div id="app">
-			<a href="main.html"><div id="whisper">WHISP</div></a>
+			<div id="chargement" style="display:none;"> <span class="loader loader-quart"></span></div>
+			<div id="whisper">WHISP</div>
 			<div id="connexion">
 				<div class="divinput">
 					<label class="label" for="input_pseudo">Pseudo</label> <br/>

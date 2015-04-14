@@ -4,7 +4,7 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <link rel="stylesheet" type="text/css" href="css/connexion.css" />
         <link rel="stylesheet" type="text/css" href="css/main.css" />
@@ -25,14 +25,17 @@
 					confmdp = $("#input_mdp_confirmation").val();
 					url = "http://www.goudesset.fr/johary/inscription.php";
 					
+					$('#chargement').show(1000);
 					if(pseudo != "none") {
 						$.post(url,{pseudo:pseudo,mail:mail,confmail:confmail,mdp:mdp,confmdp:confmdp},function(data){
 							alert(data.rapport);
+							$('#chargement').hide(200);
 						},"json");
 						return false;
 					}
 					else {
 						alert("Pseudo non valide");
+						$('#chargement').hide(200);
 					}
 				});
 			});
@@ -41,8 +44,9 @@
     </head>
     <body>
         <div id="app">
+			<div id="chargement" style="display:none;"> <span class="loader loader-quart"></span></div>
 			<div id="whisper">WHISP</div>
-			<div id="connexion">
+			<div id="inscription">
 				<div class="divinput">
 					<label class="label" for="input_pseudo">Pseudo</label> <br/>
 					<span style="font-size:0.7em;color:#3F7233;">(Sois discret sur ton pseudo ou tu seras grillé #Izi)</span>
@@ -63,6 +67,9 @@
 				<div class="divinput">
 					<label class="label" for="input_mdp_confirmation">Confirmation du mot de passe</label> <br/>
 					<input type="password" id="input_mdp_confirmation" /> <br/>
+				</div>
+				<div class="divinput">
+				<label classe="label" for="cgu">Vous acceptez les conditions d'utilisation.</label> <input type="checkbox" value="CGU" id="cgu" />
 				</div>
 				<button class="bouton connexion" id="bouton_go">GO</button>
 			</div>
