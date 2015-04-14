@@ -56,12 +56,11 @@
 					var idauteur = $('#idid').text();
 					var url = "http://www.goudesset.fr/johary/poster.php";
 					
-					$('#chargement').show(1000);
-					
 					/*check des champs*/
 					if( message != '') {
 						if( idauteur != '' ) {
-							/*envoi*/
+							$('#chargement').show(1000);
+							/*envoi
 							$.post(url,{idauteur:idauteur,message:message},function(data){
 								if( data.etat == "OK" ) {
 									alert("Message envoyé !");
@@ -71,7 +70,9 @@
 									alert(data.rapport);
 									$('#chargement').hide(200);
 								}
-							},"json");
+							},"json");*/
+							alert(message);
+							$('#chargement').hide(200);
 						}
 						else {
 							alert("Problème d'authentification");
