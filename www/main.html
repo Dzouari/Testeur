@@ -66,6 +66,8 @@
 							$.post(url,{idauteur:idauteur,message:message},function(data){
 								if( data.etat == "OK" ) {
 									alert("Message envoyé !");
+									/*vidage*/
+									var message = $('#popost').val() = "";
 									$('#chargement').hide(200);
 								}
 								else {
