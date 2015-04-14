@@ -9,9 +9,10 @@ $(document).ready(function() {
 			if(data.etat == "OK") {
 				var number = parseInt(data.nombre);
 				/*On affiche les whisps*/
-				for (var i = 1; i < number; i++) {
+				for (var i = 1; i <= number; i++) {
+					var nom = "whisp_" + i;
 					/*$selecteur.append(data.whisp.i);*/
-					alert(i);
+					alert(nom);
 				}
 				alert(data.rapport);
 			}
