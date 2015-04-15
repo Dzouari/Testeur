@@ -18,7 +18,7 @@ $(document).ready(function() {
 					$('#whisp_' + idmessage + '').switchClass( "whispost", "post",200, "easeOutCirc");
 					alert(data.rapport);
 				}
-			})
+			});
 		}
 		else {
 			alert('Whisp impossible !');
