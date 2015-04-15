@@ -25,13 +25,13 @@
 			
 			$(document).ready(function() {
 			
-				function superplus(idmessage,idauteur) {
+				function superplus(idmessage,megaid) {
 					url = "http://www.goudesset.fr/johary/like.php";
 					var classe = $('#whisp_' + idmessage + '').attr('class');
 					alert(classe);
 					if( classe == "post" ) {
 						$('#whisp_' + idmessage + '').switchClass("post","whispost",200,"easeOutCirc");
-						$.post(url,{idmessage:idmessage,idauteur:idauteur}, function(data) {
+						$.post(url,{idmessage:idmessage,megaid:megaid}, function(data) {
 							if(data.etat == "OK") {
 								alerte(data.rapport);
 							}
