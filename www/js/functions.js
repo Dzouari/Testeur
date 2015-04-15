@@ -6,6 +6,7 @@ $(document).ready(function() {
 		url="http://www.goudesset.fr/johary/like.php";
 		/*changement de classe*/
 		classe = $('#whisp_' + idmessage + '').attr('class');
+		alert(classe);
 		if (classe == "post") {
 			$('#whisp_' + idmessage + '').switchClass( "post", "whispost",200, "easeOutCirc");
 			/*envoi*/
