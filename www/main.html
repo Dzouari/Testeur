@@ -23,11 +23,27 @@
 			var id = location.search;
 			id = id.replace("?id=","");
 			
-			function superplus(idmessage,idauteur) {
-				alert('BIM');
-			}
-			
 			$(document).ready(function() {
+			
+				function superplus(idmessage,idauteur) {
+					url = "http://www.goudesset.fr/johary/like.php";
+					var classe = $('#whisp_' + idmessage + '').attr('class');
+					if( classe == "post" ) {
+						$('#whisp_' + idmessage + '').switchClass("post","whispost",200,"easeOutCirc");
+						$.post(url,{idmessage:idmessage,idauteur:idauteur}, function(data) {
+							if(data.etat == "OK") {
+								alerte(data.rapport);
+							}
+							else {
+								alert(data.rapport);
+								$('#whisp_' + idmessage + '').switchClass("whispost","post",200,"easeOutCirc");
+							}
+						})
+					}
+					else {
+						alert('Impossible de liker !');
+					}
+				}
 				
 				/*sauvegarder l'id de l'utilisateur dans une div non affichée*/
 				$('#idid').append(id);
