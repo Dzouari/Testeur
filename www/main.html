@@ -61,9 +61,13 @@
 						alert('Message vide !');
 					}
 				})
-				
-				/*like*/
-				function superplus(idmessage,megaid) {
+			})
+			
+			
+			/*like*/
+			/*faire l'ajax en javascript*/
+			jQuery.fn.extend({
+				superplus: function(idmessage,megaid) {
 					var idmessage = idmessage + "";
 					var megaid = megaid + "";
 					url = "http://www.goudesset.fr/johary/like.php";
@@ -78,6 +82,7 @@
 						var noob = document.getElementById("whisp_" + idmessage + "").className;
 						alert(noob);
 						alert('changement');
+						/*problème ici*/
 						$.post(url,{idmessage:idmessage,megaid:megaid}, function(data) {
 							if(data.etat == "OK") {
 								alerte(data.rapport);
@@ -92,7 +97,7 @@
 						alert('Impossible de liker !');
 					}
 				}
-			})
+			});
 			
 		</script>
         <title>WHISP</title>
