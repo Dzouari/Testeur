@@ -31,8 +31,11 @@
 				var classe = $('#whisp_' + idmessage + '').attr('class');
 				alert(idmessage);
 				alert(megaid);
+				alert(classe);
 				if( classe == "post" ) {
-					$('#whisp_' + idmessage + '').switchClass("post","whispost",200,"easeOutCirc");
+					$('#whisp_' + idmessage + '').switchClass( "post", "whispost", 200, "easeOutCirc" );
+					var noob = $('#whisp_' + idmessage + '').attr('class');
+					alert(noob);
 					alert('changement');
 					$.post(url,{idmessage:idmessage,megaid:megaid}, function(data) {
 						if(data.etat == "OK") {
