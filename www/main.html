@@ -61,38 +61,38 @@
 						alert('Message vide !');
 					}
 				})
+				
+				/*like*/
+				function superplus(idmessage,megaid) {
+					var idmessage = idmessage + "";
+					var megaid = megaid + "";
+					url = "http://www.goudesset.fr/johary/like.php";
+					alert('fonction');
+					var classe = $('#whisp_' + idmessage + '').attr('class');
+					alert(idmessage);
+					alert(megaid);
+					alert(classe);
+					if( classe == "post" ) {
+						alert('debut');
+						document.getElementById("whisp_" + idmessage + "").className = "whispost";
+						var noob = document.getElementById("whisp_" + idmessage + "").className;
+						alert(noob);
+						alert('changement');
+						$.post(url,{idmessage:idmessage,megaid:megaid}, function(data) {
+							if(data.etat == "OK") {
+								alerte(data.rapport);
+							}
+							else {
+								alert(data.rapport);
+								$('#whisp_' + idmessage + '').switchClass("whispost","post",200,"easeOutCirc");
+							}
+						}, "json");
+					}
+					else {
+						alert('Impossible de liker !');
+					}
+				}
 			})
-			
-			/*like*/
-			function superplus(idmessage,megaid) {
-				var idmessage = idmessage + "";
-				var megaid = megaid + "";
-				url = "http://www.goudesset.fr/johary/like.php";
-				alert('fonction');
-				var classe = $('#whisp_' + idmessage + '').attr('class');
-				alert(idmessage);
-				alert(megaid);
-				alert(classe);
-				if( classe == "post" ) {
-					alert('debut');
-					document.getElementById("whisp_" + idmessage + "").className = "whispost";
-					var noob = document.getElementById("whisp_" + idmessage + "").className;
-					alert(noob);
-					alert('changement');
-					$.post(url,{idmessage:idmessage,megaid:megaid}, function(data) {
-						if(data.etat == "OK") {
-							alerte(data.rapport);
-						}
-						else {
-							alert(data.rapport);
-							$('#whisp_' + idmessage + '').switchClass("whispost","post",200,"easeOutCirc");
-						}
-					}, "json");
-				}
-				else {
-					alert('Impossible de liker !');
-				}
-			}
 			
 		</script>
         <title>WHISP</title>
