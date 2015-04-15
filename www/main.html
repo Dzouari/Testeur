@@ -81,14 +81,13 @@
 					alert('changement');
 					$.post(url,{idmessage:idmessage,megaid:megaid}, function(data) {
 						if(data.etat == "OK") {
-							
 							alerte(data.rapport);
 						}
 						else {
 							alert(data.rapport);
 							$('#whisp_' + idmessage + '').switchClass("whispost","post",200,"easeOutCirc");
 						}
-					});
+					}, "json");
 				}
 				else {
 					alert('Impossible de liker !');
