@@ -31,10 +31,10 @@
 					/*changement de classe*/
 					classe = $('#whisp_' + idmessage + '').attr('class');
 					alert(classe);
-					if (classe == "post") {
+					/*if (classe == "post") {
 						$('#whisp_' + idmessage + '').switchClass( "post", "whispost",200, "easeOutCirc");
-						/*envoi*/
-						$.post(url,{idmessage:idmessage,id:id}, function(data) {
+						envoi*/
+						/*$.post(url,{idmessage:idmessage,id:id}, function(data) {
 							if(data.etat == "OK") {
 								alert(data.rapport);
 							}
@@ -46,7 +46,7 @@
 					}
 					else {
 						alert('Whisp impossible !');
-					}
+					}*/
 				}
 			
 				/*sauvegarder l'id de l'utilisateur dans une div non affichée*/
