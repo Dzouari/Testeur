@@ -1,30 +1,5 @@
 $(document).ready(function() {
 	
-	
-	/*fonction like*/
-	function plus(idmessage,id) {
-		url="http://www.goudesset.fr/johary/like.php";
-		/*changement de classe*/
-		classe = $('#whisp_' + idmessage + '').attr('class');
-		alert(classe);
-		if (classe == "post") {
-			$('#whisp_' + idmessage + '').switchClass( "post", "whispost",200, "easeOutCirc");
-			/*envoi*/
-			$.post(url,{idmessage:idmessage,id:id}, function(data) {
-				if(data.etat == "OK") {
-					alert(data.rapport);
-				}
-				else {
-					$('#whisp_' + idmessage + '').switchClass( "whispost", "post",200, "easeOutCirc");
-					alert(data.rapport);
-				}
-			});
-		}
-		else {
-			alert('Whisp impossible !');
-		}
-	}
-	
 	/*affichage whisps*/
 	function whisp(type,id,$selecteur) {
 		url="http://www.goudesset.fr/johary/whisp.php";
