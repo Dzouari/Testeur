@@ -20,6 +20,7 @@ $(document).ready(function() {
 		}, "json");
 	}
 	
+	
 	/*Si on clique sur un*/
 	$('#un').click(function() {
 		$('#poster').animate({
