@@ -30,6 +30,7 @@
 				alert(classe);
 				if( classe == "post" ) {
 					$('#whisp_' + idmessage + '').switchClass("post","whispost",200,"easeOutCirc");
+					alert('changement');
 					$.post(url,{idmessage:idmessage,megaid:megaid}, function(data) {
 						if(data.etat == "OK") {
 							alerte(data.rapport);
