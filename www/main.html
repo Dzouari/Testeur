@@ -34,8 +34,8 @@
 				alert(classe);
 				if( classe == "post" ) {
 					alert('debut');
-					$('#whisp_' + idmessage + '').className = "whispost";
-					var noob = $('#whisp_' + idmessage + '').attr('class');
+					document.getElementById("whisp_" + idmessage + "").className = "whispost";
+					var noob = document.getElementById("whisp_" + idmessage + "").className;
 					alert(noob);
 					alert('changement');
 					$.post(url,{idmessage:idmessage,megaid:megaid}, function(data) {
