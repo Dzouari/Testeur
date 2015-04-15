@@ -71,7 +71,7 @@ $(document).ready(function() {
 			$('#quatre').css('color', '#808080');
 		})
 		
-		whisp("news",0,$("#news"));
+		whisp("news",$("#idid").text(),$("#news"));
 	})
 	
 	
@@ -102,7 +102,7 @@ $(document).ready(function() {
 			$('#quatre').css('color', '#808080');
 		})
 		
-		whisp("top",0,$("#top"));
+		whisp("top",$("#idid").text(),$("#top"));
 	})
 	
 	
