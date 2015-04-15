@@ -83,7 +83,7 @@
 						alert(noob);
 						alert('changement');
 						/*problème ici*/
-						$.post(url,{idmessage:idmessage,megaid:megaid}, function(data) {
+						$.post(url,{message:idmessage,auteur:megaid}, function(data) {
 							if(data.etat == "OK") {
 								alerte(data.rapport);
 							}
