@@ -1,25 +1,4 @@
 $(document).ready(function() {
-	function superplus(idmessage,megaid) {
-		url = "http://www.goudesset.fr/johary/like.php";
-		alert('fonction');
-		var classe = $('#whisp_' + idmessage + '').attr('class');
-		alert(classe);
-		if( classe == "post" ) {
-			$('#whisp_' + idmessage + '').switchClass("post","whispost",200,"easeOutCirc");
-			$.post(url,{idmessage:idmessage,megaid:megaid}, function(data) {
-				if(data.etat == "OK") {
-					alerte(data.rapport);
-				}
-				else {
-					alert(data.rapport);
-					$('#whisp_' + idmessage + '').switchClass("whispost","post",200,"easeOutCirc");
-				}
-			})
-		}
-		else {
-			alert('Impossible de liker !');
-		}
-	}
 	
 	
 	/*affichage whisps*/
