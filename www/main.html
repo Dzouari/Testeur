@@ -25,12 +25,12 @@
 			
 			$(document).ready(function() {
 				
-				/*fonction like*/
+				/*fonction like
 				function plus() {
-					url="http://www.goudesset.fr/johary/like.php";
+					url="http://www.goudesset.fr/johary/like.php";*/
 					/*changement de classe
-					classe = $('#whisp_' + idmessage + '').attr('class');*/
-					alert('caca');
+					classe = $('#whisp_' + idmessage + '').attr('class');
+					alert('caca');*/
 					/*if (classe == "post") {
 						$('#whisp_' + idmessage + '').switchClass( "post", "whispost",200, "easeOutCirc");
 						envoi*/
@@ -46,8 +46,13 @@
 					}
 					else {
 						alert('Whisp impossible !');
-					}*/
-				}
+					}
+				}*/
+				
+				$('.post').click(function() {
+					var caca = $(this).attr('value');
+					alert(caca);
+				})
 			
 				/*sauvegarder l'id de l'utilisateur dans une div non affichée*/
 				$('#idid').append(id);
