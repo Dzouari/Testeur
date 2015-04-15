@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	
+		
 	/*affichage whisps*/
 	function whisp(type,id,$selecteur) {
 		url="http://www.goudesset.fr/johary/whisp.php";
