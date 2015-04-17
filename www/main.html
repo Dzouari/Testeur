@@ -61,8 +61,7 @@
 						alert('Message vide !');
 					}
 				})
-			})
-			
+			});
 			
 			/*like*/
 			/*faire l'ajax en javascript*/
@@ -75,13 +74,25 @@
 				alert(idmessage);
 				alert(megaid);
 				alert(classe);
+				
+				/*XHR*/
+				
 				if( classe == "post" ) {
 					alert('debut');
 					document.getElementById("whisp_" + idmessage + "").className = "whispost";
 					var noob = document.getElementById("whisp_" + idmessage + "").className;
 					alert(noob);
 					alert('changement');
-					/*problème ici*/
+					
+					/*XHR*/var xhr = new XMLHttpRequest;
+					xhr.onreadystatechange = function() {
+						if(this.readyState == 4) {
+							alert(this.responseText);
+						}
+					}
+					xhr.open('GET','http://www.goudesset.fr/johary/like.php?message=' + idmessage + '&auteur=' + megaid + '', true);
+					
+					/*problème ici
 					$.post(url,{message:idmessage,auteur:megaid}, function(data) {
 						if(data.etat == "OK") {
 							alerte(data.rapport);
@@ -90,7 +101,7 @@
 							alert(data.rapport);
 							$('#whisp_' + idmessage + '').switchClass("whispost","post",200,"easeOutCirc");
 						}
-					}, "json");
+					}, "json");*/
 				}
 				else {
 					alert('Impossible de liker !');
