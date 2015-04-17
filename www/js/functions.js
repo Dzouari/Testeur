@@ -1,10 +1,8 @@
 $(document).ready(function() {
 
 	/*like*/
-	$('.likeur').click(function(e) {
-		e.preventDefault();
-		var $a = $(this);
-		var idmessage = $a.attr('value');
+	$('.likeur').click(function() {
+		var idmessage = 12;
 		var megaid = $("#idid").text();
 		url = "http://www.goudesset.fr/johary/like.php";
 		alert('fonction');
