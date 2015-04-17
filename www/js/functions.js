@@ -1,5 +1,51 @@
 $(document).ready(function() {
-	
+
+	/*like*/
+	$('.likeur').click(function(e) {
+		e.preventDefault();
+		var $a = $(this);
+		var idmessage = $a.attr('value');
+		var megaid = $("#idid").text();
+		url = "http://www.goudesset.fr/johary/like.php";
+		alert('fonction');
+		var classe = $('#whisp_' + idmessage + '').attr('class');
+		alert(idmessage);
+		alert(megaid);
+		alert(classe);
+		
+		/*XHR*/
+		if( classe == "post" ) {
+			alert('debut');
+			document.getElementById("whisp_" + idmessage + "").className = "whispost";
+			var noob = document.getElementById("whisp_" + idmessage + "").className;
+			alert(noob);
+			alert('changement');
+			/*XHR
+			var xhr = new XMLHttpRequest;
+			xhr.open('GET','http://www.goudesset.fr/johary/like.php?message=' + idmessage + '&auteur=' + megaid + '', true);
+			xhr.onreadystatechange = function() {
+				alert('CACA');
+				if(this.readyState == 4) {
+					alert(this.responseText);
+				}
+			}*/
+			
+			
+			/*problème ici*/
+			$.post(url,{message:idmessage,auteur:megaid}, function(data) {
+				if(data.etat == "OK") {
+					alerte(data.rapport);
+				}
+				else {
+					alert(data.rapport);
+					$('#whisp_' + idmessage + '').switchClass("whispost","post",200,"easeOutCirc");
+				}
+			}, "json");
+		}
+		else {
+			alert('Impossible de liker !');
+		}
+	});
 	
 	/*affichage whisps*/
 	function whisp(type,id,$selecteur) {
