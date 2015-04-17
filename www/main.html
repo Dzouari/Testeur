@@ -85,12 +85,14 @@
 					alert('changement');
 					
 					/*XHR*/var xhr = new XMLHttpRequest;
+					xhr.open('GET','http://www.goudesset.fr/johary/like.php?message=' + idmessage + '&auteur=' + megaid + '', true);
 					xhr.onreadystatechange = function() {
+						alert('CACA');
 						if(this.readyState == 4) {
 							alert(this.responseText);
 						}
 					}
-					xhr.open('GET','http://www.goudesset.fr/johary/like.php?message=' + idmessage + '&auteur=' + megaid + '', true);
+					
 					
 					/*problème ici
 					$.post(url,{message:idmessage,auteur:megaid}, function(data) {
